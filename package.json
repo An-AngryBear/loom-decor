@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/An-AngryBear/loom-decor#readme",
   "dependencies": {
-    "less": "^2.7.3"
+    "handlebars": "^4.0.11",
+    "less": "^2.7.3",
+    "normalize.css": "^7.0.0"
   }
 }
