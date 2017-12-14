@@ -1,0 +1,22 @@
+{
+  "name": "loom-decor",
+  "version": "1.0.0",
+  "description": "loom decor test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/An-AngryBear/loom-decor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/An-AngryBear/loom-decor/issues"
+  },
+  "homepage": "https://github.com/An-AngryBear/loom-decor#readme",
+  "dependencies": {
+    "less": "^2.7.3"
+  }
+}
