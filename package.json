@@ -17,8 +17,16 @@
   },
   "homepage": "https://github.com/An-AngryBear/loom-decor#readme",
   "dependencies": {
-    "handlebars": "^4.0.11",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "handlebars": "^4.0.10",
+    "hbsfy": "^2.7.0",
+    "jquery": "^3.2.1",
     "less": "^2.7.3",
+    "matchdep": "^1.0.1",
     "normalize.css": "^7.0.0"
   }
 }
