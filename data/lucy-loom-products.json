@@ -1,0 +1,49 @@
+{
+    "product-display": [
+        {
+            "types": ["Flat Roman Shade"],
+            "room-type": "bath",
+            "img": "/imgs/BATH-1.jpg"
+        },
+        {
+            "types": ["Drapery", "Pillow Shams", "Bed Skirt", "Duvet Cover, Fabrics"],
+            "room-type": "bedroom",
+            "img": "/imgs/BEDROOM-1.jpg"
+        },
+        {
+            "types": ["Drapery", "Duvet Cover", "Pillow Shams", "Lumbar Pillow", "Fabrics"],
+            "room-type": "bedroom",
+            "img": "/imgs/BEDROOM-2.jpg"
+        },
+        {
+            "types": ["Roman Shade"],
+            "room-type": "kitchen",
+            "img": "/imgs/KITCHEN-1.jpg"
+        },
+        {
+            "types": ["Drapery", "Throw Pillows", "Fabrics"],
+            "room-type": "living",
+            "img": "/imgs/LIVING-1.jpg"
+        },
+        {
+            "types": ["Drapery", "Throw Pillows", "Fabrics"],
+            "room-type": "living",
+            "img": "/imgs/LIVING-2.jpg"
+        },
+        {
+            "types": ["Drapery", "Fabrics"],
+            "room-type": "living",
+            "img": "/imgs/LIVING-3.jpg"
+        },
+        {
+            "types": ["Window Shades"],
+            "room-type": "study",
+            "img": "/imgs/STUDY-1.jpg"
+        },
+        {
+            "types": ["Relaxed Roman Shades"],
+            "room-type": "study",
+            "img": "/imgs/STUDY-2.jpg"
+        }
+    ]     
+}
