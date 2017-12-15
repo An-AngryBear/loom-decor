@@ -4,7 +4,7 @@
 var $ = require('jquery');
 const designerInfo = {};
 
-designerInfo.getInteriors = function() {
+designerInfo.getDesignerInfo = function() {
 	return new Promise( (resolve, reject) => {
 		$.ajax({
 			url: "../data/lucy-loom.json"
@@ -18,34 +18,18 @@ designerInfo.getInteriors = function() {
 	});
 };
 
-designerInfo.getDesignerInfo = function() {
-	return new Promise( (resolve, reject) => {
-		$.ajax({
-			url: "../data/lucy-loom.json"
-		})
-		.done( (data) => {
-			resolve(data.designer);
-		})
-		.fail( (error) => {
-			console.log("error", error.statusText);
-		});
-	});
-};
-
 module.exports = designerInfo;
 },{"jquery":23}],2:[function(require,module,exports){
 'use strict';
 
 var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
-const { getDesignerInfo, getInteriors } = require("./designer-info.js");
+const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
 
-
-
-getInteriors()
+// adds display templates to DOM
+getDesignerInfo()
 .then( (data) => {
-    console.log("get interiors");
     $('.img-container').append(displayTemplate(data));
 });
 },{"../templates/display-cards.hbs":24,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
@@ -11439,11 +11423,15 @@ return jQuery;
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(container,depth0,helpers,partials,data) {
-    var helper;
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "    <img src=\""
-    + container.escapeExpression(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"img","hash":{},"data":data}) : helper)))
-    + "\">\r\n";
+  return "    <div class=\"display-card\" data=\""
+    + alias4(((helper = (helper = helpers["room-type"] || (depth0 != null ? depth0["room-type"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"room-type","hash":{},"data":data}) : helper)))
+    + "\">\r\n        <img src=\""
+    + alias4(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"img","hash":{},"data":data}) : helper)))
+    + "\">\r\n        <p>Loom Decor products displayed above: "
+    + alias4(((helper = (helper = helpers.types || (depth0 != null ? depth0.types : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"types","hash":{},"data":data}) : helper)))
+    + " \r\n        </p>\r\n    </div>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 

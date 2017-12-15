@@ -1,47 +1,69 @@
 {
     "interiors": [
         {
-            "types": ["Flat Roman Shade"],
+            "types": [
+                {"name": "Flat Roman Shade"}],
             "room-type": "bath",
             "img": "/imgs/BATH-1.jpg"
         },
         {
-            "types": ["Drapery", "Pillow Shams", "Bed Skirt", "Duvet Cover, Fabrics"],
+            "types": [
+                {"name":"Drapery"},
+                {"name": "Pillow Shams"},
+                {"name": "Bed Skirt"},
+                {"name": "Duvet Cover"},
+                {"name": "Fabrics"}],
             "room-type": "bedroom",
             "img": "/imgs/BEDROOM-1.jpg"
         },
         {
-            "types": ["Drapery", "Duvet Cover", "Pillow Shams", "Lumbar Pillow", "Fabrics"],
+            "types": [
+                {"name": "Drapery"},
+                {"name": "Duvet Cover"},
+                {"name": "Pillow Shams"},
+                {"name":"Lumbar Pillow"}, 
+                {"name":"Fabrics"}],
             "room-type": "bedroom",
             "img": "/imgs/BEDROOM-2.jpg"
         },
         {
-            "types": ["Roman Shade"],
+            "types": [
+                {"name":"Roman Shade"}],
             "room-type": "kitchen",
             "img": "/imgs/KITCHEN-1.jpg"
         },
         {
-            "types": ["Drapery", "Throw Pillows", "Fabrics"],
+            "types": [
+                {"name": "Drapery"},
+                {"name": "Throw Pillows"},
+                {"name": "Fabrics"}],
             "room-type": "living",
             "img": "/imgs/LIVING-1.jpg"
         },
         {
-            "types": ["Drapery", "Throw Pillows", "Fabrics"],
+            "types": [
+                {"name": "Drapery"},
+                {"name":"Throw Pillows"},
+                {"name":"Fabrics"}],
             "room-type": "living",
             "img": "/imgs/LIVING-2.jpg"
         },
         {
-            "types": ["Drapery", "Fabrics"],
+            "types": [
+                {"name": "Drapery"},
+                {"name": "Fabrics"}],
             "room-type": "living",
             "img": "/imgs/LIVING-3.jpg"
         },
         {
-            "types": ["Window Shades"],
+            "types": [
+                {"name": "Window Shades"}],
             "room-type": "study",
             "img": "/imgs/STUDY-1.jpg"
         },
         {
-            "types": ["Relaxed Roman Shades"],
+            "types": [
+                {"name":"Relaxed Roman Shades"}],
             "room-type": "study",
             "img": "/imgs/STUDY-2.jpg"
         }
@@ -53,6 +75,9 @@
         "design-firm": "LaLoom Interiors",
         "location": "Nashville, TN",
         "photo-cred": "Finestra Studios",
-        "quotes": ["Loom makes completing my designs easy and affordable.", "You’d think that doing it over the Internet would be risky, but it wasn’t. I can’t recommend Loom enough.", "Loom streamlines the design process and never disappoints."]
+        "quotes": [
+            {"quote": "Loom makes completing my designs easy and affordable."},
+            {"quote": "You’d think that doing it over the Internet would be risky, but it wasn’t. I can’t recommend Loom enough."},
+            {"quote": "Loom streamlines the design process and never disappoints."}]
     }
 }

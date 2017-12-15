@@ -2,13 +2,11 @@
 
 var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
-const { getDesignerInfo, getInteriors } = require("./designer-info.js");
+const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
 
-
-
-getInteriors()
+// adds display templates to DOM
+getDesignerInfo()
 .then( (data) => {
-    console.log("get interiors");
     $('.img-container').append(displayTemplate(data));
 });
