@@ -1,5 +1,14 @@
 'use strict';
 
-const productDisplay = require("./get-product-displays.js");
+var $ = require('jquery');
+let Handlebars = require('hbsfy/runtime');
+const { getDesignerInfo, getInteriors } = require("./designer-info.js");
+let displayTemplate = require('../templates/display-cards.hbs');
 
-console.log("connected", productDisplay.getProductDisplay());
+
+
+getInteriors()
+.then( (data) => {
+    console.log("get interiors");
+    $('.img-container').append(displayTemplate(data));
+});

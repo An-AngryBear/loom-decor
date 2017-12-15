@@ -1,5 +1,5 @@
 {
-    "product-display": [
+    "interiors": [
         {
             "types": ["Flat Roman Shade"],
             "room-type": "bath",
@@ -45,5 +45,14 @@
             "room-type": "study",
             "img": "/imgs/STUDY-2.jpg"
         }
-    ]     
+    ],
+    "designer" : {
+        "name": "Lucy Loom",
+        "social": "@lucyloom",
+        "aesthetic": "romantic, contemporary",
+        "design-firm": "LaLoom Interiors",
+        "location": "Nashville, TN",
+        "photo-cred": "Finestra Studios",
+        "quotes": ["Loom makes completing my designs easy and affordable.", "You’d think that doing it over the Internet would be risky, but it wasn’t. I can’t recommend Loom enough.", "Loom streamlines the design process and never disappoints."]
+    }
 }
