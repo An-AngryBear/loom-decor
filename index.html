@@ -4,18 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loom Decor</title>
+    <link rel="stylesheet" href="\node_modules\normalize.css\normalize.css">
     <link rel="stylesheet/less" type="text/css" href="less/styles.less">
     <script src="node_modules\jquery\dist\jquery.min.js"></script>
     <script src="node_modules\less\dist\less.js" type="text/javascript"></script>
 </head>
 <body>
-    <nav class="nav"></nav>
-    <content class="wrapper">
+    <nav class="nav">
+        <img class="nav-img mobile-img" src="/imgs/mobile-nav.png">
+        <img class="nav-img tablet-img" src="/imgs/tablet-nav.png">
+        <img class="nav-img desktop-img" src="/imgs/desktop-nav.png">
+    </nav>
+    <main class="wrapper">
         <div class="title-header"></div>
         <div class="title-image"></div>
         <div class="img-container"></div>
-    </content>
-    <footer class="footer"></footer>
+    </main>
+    <footer class="footer">
+        <img class="footer-img mobile-img" src="/imgs/mobile-footer.png">
+        <img class="footer-img tablet-img" src="/imgs/tablet-footer.png">
+        <img class="footer-img desktop-img" src="/imgs/desktop-footer.png">
+    </footer>
     
     <script src="dist/app.js" type="text/javascript"></script>
 </body>

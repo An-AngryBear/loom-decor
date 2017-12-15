@@ -11,12 +11,46 @@
     display: flex;
 }
 
-// tablet styles
-@media only screen and (min-width : 768px) {
+.tablet-img {
+    display: none;
+}
 
+.desktop-img {
+    display: none;
+}
+
+.mobile-img {
+    width: 100%;
+}
+
+// tablet styles
+@media only screen and (min-width : 600px) {
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .tablet-img {
+        display: block;
+        width: 100%;
+    }
 }
 
 // desktop styles
-@media only screen and (min-width : 992px) {
+@media only screen and (min-width : 900px) {
+    .tablet-img {
+        display: none;
+    }
 
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+        width: 100%
+    }
 }
