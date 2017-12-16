@@ -4,6 +4,7 @@
 var $ = require('jquery');
 const designerInfo = {};
 
+// GETs designer info from data folder
 designerInfo.getDesignerInfo = function() {
 	return new Promise( (resolve, reject) => {
 		$.ajax({
@@ -26,12 +27,14 @@ var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
+let headerTemplate = require('../templates/header.hbs');
 
-// adds display templates to DOM
+// adds templates to DOM
 getDesignerInfo()
 .then( (data) => {
     addDescription(data);
     $('.img-container').append(displayTemplate(data));
+    $('.page-header').append(headerTemplate(data.designer));
 });
 
 // formats the product types into paragraph form
@@ -52,7 +55,7 @@ let addDescription = (data) => {
         interior.description = typesToPForm(interior.types);
     });
 };
-},{"../templates/display-cards.hbs":24,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
+},{"../templates/display-cards.hbs":24,"../templates/header.hbs":25,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -11456,6 +11459,17 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
     var stack1;
 
   return ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.interiors : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
+},"useData":true});
+
+},{"hbsfy/runtime":22}],25:[function(require,module,exports){
+// hbsfy compiled Handlebars template
+var HandlebarsCompiler = require('hbsfy/runtime');
+module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "<div class=\"title-header\">\r\n    <h3 class=\"header-text\">"
+    + container.escapeExpression(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"name","hash":{},"data":data}) : helper)))
+    + " Designs</h3> \r\n</div>\r\n<div class=\"title-image\">\r\n    <img src=\"\">\r\n</div>";
 },"useData":true});
 
 },{"hbsfy/runtime":22}]},{},[2]);

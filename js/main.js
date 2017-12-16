@@ -4,12 +4,14 @@ var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
+let headerTemplate = require('../templates/header.hbs');
 
-// adds display templates to DOM
+// adds templates to DOM
 getDesignerInfo()
 .then( (data) => {
     addDescription(data);
     $('.img-container').append(displayTemplate(data));
+    $('.page-header').append(headerTemplate(data.designer));
 });
 
 // formats the product types into paragraph form
