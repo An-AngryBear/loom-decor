@@ -17,12 +17,6 @@
     justify-content: space-between;
 }
 
-//test
-.filter {
-    border: 1px solid black;
-}
-
-
 .display-card, .img-container img {
     width: 100%;
 }
@@ -33,6 +27,7 @@ h3 {
     line-height: 25px;
     color: @main-txt-slate;
     font-weight: 400;
+    font-size: 20px;
 }
 
 p {
@@ -48,20 +43,23 @@ p {
     padding-bottom: 20px;
     padding-top: 25px;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
 }
 
-// stack divs in column for mobile and tablet view
+// stack divs in column for mobile and tablet view, adjust sizes
 .wrapper {
     flex-direction: column;
+    .filter {
+        min-height: 30vh;
+        margin-bottom: 20px;
+        .filter-header {
+            text-align: center;
+            font-size: 24px;
+        }
+    }
 }
 
-.filter {
-    min-height: 30vh;
-    margin-bottom: 20px;
-}
-
-// display nav and footer static imgs for mobile
+// display nav and footer static imgs for mobile - FOR TEST DEMO
 .tablet-img {
     display: none;
 }
@@ -79,34 +77,63 @@ p {
 //************ tablet styles*************
 @media only screen and (min-width : 600px) {
 
-    // display nav and footer static imgs for tablet
+    
+    .title-header {
+        text-align: left;
+    }
+    
+    .header-text {
+        padding-left: 60px;
+    }
+    
+    .filter {
+        min-height: 30vh;
+    }
+    
+    // display nav and footer static imgs for tablet - FOR TEST DEMO
     .mobile-img {
         display: none;
     }
-
+    
     .desktop-img {
         display: none;
     }
-
+    
     .tablet-img {
         display: block;
         width: 100%;
     }
-
-    .title-header {
-        text-align: left;
-    }
-
-    .header-text {
-        padding-left: 60px;
-    }
-
 }
 
 //************* desktop styles **************
 @media only screen and (min-width : 900px) {
+    
+    .title-header {
+        max-width: 1120px;
+        margin: 0 auto 0 auto;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    
+    .header-text {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 60px;
+    }
 
-    // display nav and footer static imgs for desktop
+    .wrapper {
+        flex-direction: row;
+        .filter {
+            min-height: 100vh;
+            flex: 1
+        }
+        .img-container {
+            flex: 3;
+            margin-left: 20px;
+        }
+    }
+
+    // display nav and footer static imgs for desktop - FOR TEST DEMO
     .tablet-img {
         display: none;
     }
@@ -118,32 +145,5 @@ p {
     .desktop-img {
         display: block;
         width: 100%
-    }
-
-    .title-header {
-        max-width: 1120px;
-        margin: 0 auto 0 auto;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-
-    .header-text {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 60px;
-    }
-
-    .filter {
-        min-height: 100vh;
-        flex: 1
-    }
-
-    .img-container {
-        flex: 3;
-        margin-left: 20px;
-    }
-
-    .wrapper {
-        flex-direction: row;
     }
 }
