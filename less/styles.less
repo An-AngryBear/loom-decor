@@ -1,3 +1,4 @@
+// less variables
 @main-txt-slate: #494949;
 @title-box-gray: #efeeed;
 @border-gray: #e8e6e3;
@@ -5,3 +6,63 @@
 @caps-txt-gray: #a3b1c2;
 @btn-gray: #9da5b3;
 
+.wrapper {
+    display: flex;
+    max-width: 1120px;
+    margin: auto;
+}
+
+.display-card, .img-container img {
+    width: 100%;
+}
+
+// mobile styles
+
+// display nav and footer static imgs for mobile
+.tablet-img {
+    display: none;
+}
+
+.desktop-img {
+    display: none;
+}
+
+.mobile-img {
+    width: 100%;
+}
+
+// tablet styles
+@media only screen and (min-width : 600px) {
+
+    // display nav and footer static imgs for tablet
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: none;
+    }
+
+    .tablet-img {
+        display: block;
+        width: 100%;
+    }
+}
+
+// desktop styles
+@media only screen and (min-width : 900px) {
+
+    // display nav and footer static imgs for desktop
+    .tablet-img {
+        display: none;
+    }
+
+    .mobile-img {
+        display: none;
+    }
+
+    .desktop-img {
+        display: block;
+        width: 100%
+    }
+}
