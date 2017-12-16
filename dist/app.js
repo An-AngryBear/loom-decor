@@ -30,8 +30,28 @@ let displayTemplate = require('../templates/display-cards.hbs');
 // adds display templates to DOM
 getDesignerInfo()
 .then( (data) => {
+    addDescription(data);
     $('.img-container').append(displayTemplate(data));
 });
+
+// formats the product types into paragraph form
+let typesToPForm = (names) => {
+    let nameOutput = names.map( (name) => {
+        return name.name;
+    });
+    if(nameOutput.length > 1) {
+        nameOutput.splice(nameOutput.length - 2, 2, nameOutput[nameOutput.length - 2] + ' and ' + nameOutput[nameOutput.length - 1]);
+    }
+    nameOutput = nameOutput.join(", ");
+    return nameOutput;
+};
+
+// adds product description to template data
+let addDescription = (data) => {
+    data.interiors.forEach( (interior) => {
+        interior.description = typesToPForm(interior.types);
+    });
+};
 },{"../templates/display-cards.hbs":24,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
@@ -11430,8 +11450,8 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
     + "\">\r\n        <img src=\""
     + alias4(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"img","hash":{},"data":data}) : helper)))
     + "\">\r\n        <p>Loom Decor products displayed above: "
-    + alias4(((helper = (helper = helpers.types || (depth0 != null ? depth0.types : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"types","hash":{},"data":data}) : helper)))
-    + " \r\n        </p>\r\n    </div>\r\n";
+    + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
+    + "</p>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
