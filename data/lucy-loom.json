@@ -3,7 +3,7 @@
         {
             "types": [
                 {"name": "Flat Roman Shade"}],
-            "room-type": "bath",
+            "room-type": "Bath",
             "img": "/imgs/BATH-1.jpg"
         },
         {
@@ -13,7 +13,7 @@
                 {"name": "Bed Skirt"},
                 {"name": "Duvet Cover"},
                 {"name": "Fabrics"}],
-            "room-type": "bedroom",
+            "room-type": "Bedroom",
             "img": "/imgs/BEDROOM-1.jpg"
         },
         {
@@ -23,13 +23,13 @@
                 {"name": "Pillow Shams"},
                 {"name":"Lumbar Pillow"}, 
                 {"name":"Fabrics"}],
-            "room-type": "bedroom",
+            "room-type": "Bedroom",
             "img": "/imgs/BEDROOM-2.jpg"
         },
         {
             "types": [
                 {"name":"Roman Shade"}],
-            "room-type": "kitchen",
+            "room-type": "Kitchen",
             "img": "/imgs/KITCHEN-1.jpg"
         },
         {
@@ -37,7 +37,7 @@
                 {"name": "Drapery"},
                 {"name": "Throw Pillows"},
                 {"name": "Fabrics"}],
-            "room-type": "living",
+            "room-type": "Living",
             "img": "/imgs/LIVING-1.jpg"
         },
         {
@@ -45,26 +45,26 @@
                 {"name": "Drapery"},
                 {"name":"Throw Pillows"},
                 {"name":"Fabrics"}],
-            "room-type": "living",
+            "room-type": "Living",
             "img": "/imgs/LIVING-2.jpg"
         },
         {
             "types": [
                 {"name": "Drapery"},
                 {"name": "Fabrics"}],
-            "room-type": "living",
+            "room-type": "Living",
             "img": "/imgs/LIVING-3.jpg"
         },
         {
             "types": [
                 {"name": "Window Shades"}],
-            "room-type": "study",
+            "room-type": "Study",
             "img": "/imgs/STUDY-1.jpg"
         },
         {
             "types": [
                 {"name":"Relaxed Roman Shades"}],
-            "room-type": "study",
+            "room-type": "Study",
             "img": "/imgs/STUDY-2.jpg"
         }
     ],

@@ -7,6 +7,10 @@
 @header-font: 'Rufina', serif;
 @main-font: 'Maven Pro', sans-serif;
 
+.page-header {
+    margin-top: 20px;
+}
+
 .wrapper {
     max-width: 1120px;
     margin: auto;
@@ -31,8 +35,21 @@
                 color: @main-txt-slate;
                 font-size: 1.2em;
             }
+            .room-filters {
+                .room-filter-list {
+                    list-style-type: none;
+                    padding: 0;
+                    font-family: @main-font;
+                    color: @main-txt-slate;
+                    font-weight: 200;
+                    line-height: 1.5;
+                }
+                .room-filter-list li:hover {
+                    color: @secondary-txt-gray;
+                    cursor: pointer;
+                }
+            }
         }
-
     }
     .filter-btn {
         background-color: @title-box-gray;
@@ -86,7 +103,6 @@ p {
 .wrapper {
     flex-direction: column;
     .aside {
-        min-height: 30vh;
         margin-bottom: 20px;
         .aside-header {
             text-align: center;
@@ -120,10 +136,6 @@ p {
     
     .header-text {
         padding-left: 60px;
-    }
-    
-    .aside {
-        min-height: 30vh;
     }
     
     // display nav and footer static imgs for tablet - FOR TEST DEMO
@@ -162,13 +174,18 @@ p {
         .aside {
             min-height: 100vh;
             flex: 1.5;
-            min-height: 80vh;
-            .filter-btn {
-                display: none;
-            }
             .designer-info {
                 min-height: 20vh;
             }
+            .filter {
+                display: block;
+                .close-filter {
+                    display: none;
+                }
+            }
+        }
+        .filter-btn {
+            display: none;
         }
         .img-container {
             flex: 3;

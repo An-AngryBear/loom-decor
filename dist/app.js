@@ -28,11 +28,13 @@ let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
 let headerTemplate = require('../templates/header.hbs');
+let filterTemplate = require('../templates/filters.hbs');
 
 // adds templates to DOM
 getDesignerInfo()
 .then( (data) => {
     addDescription(data);
+    $('.filter').append(filterTemplate(getRooms(data)));
     $('.img-container').append(displayTemplate(data));
     $('.page-header').append(headerTemplate(data.designer));
 });
@@ -56,6 +58,18 @@ let addDescription = (data) => {
     });
 };
 
+// gets all types of rooms for filter template
+let getRooms = (data) => {
+    let roomTypes = data.interiors.reduce( (acc, cur) => {
+        if(acc.indexOf(cur['room-type']) < 0) {
+            return acc.concat(cur['room-type']);
+        } else {
+            return acc;
+        }
+    }, []);
+    return { roomTypes };
+};
+
 // click events for filter
 $('.filter-btn').on('click', function() {
     $('.filter').slideToggle();
@@ -64,7 +78,7 @@ $('.filter-btn').on('click', function() {
 $(document).on('click', '.close-filter', function() {
     $('.filter').slideUp();
 });
-},{"../templates/display-cards.hbs":24,"../templates/header.hbs":25,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
+},{"../templates/display-cards.hbs":24,"../templates/filters.hbs":25,"../templates/header.hbs":26,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -11471,6 +11485,21 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
 },"useData":true});
 
 },{"hbsfy/runtime":22}],25:[function(require,module,exports){
+// hbsfy compiled Handlebars template
+var HandlebarsCompiler = require('hbsfy/runtime');
+module.exports = HandlebarsCompiler.template({"1":function(container,depth0,helpers,partials,data) {
+    return "            <li class=\"room-list-item\">"
+    + container.escapeExpression(container.lambda(depth0, depth0))
+    + "</li>\r\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<div class=\"room-filters\">\r\n    <ul class=\"room-filter-list\">\r\n"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.roomTypes : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "    </ul>\r\n    <hr class=\"hr\">\r\n</div>";
+},"useData":true});
+
+},{"hbsfy/runtime":22}],26:[function(require,module,exports){
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
