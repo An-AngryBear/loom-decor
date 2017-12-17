@@ -32,3 +32,12 @@ let addDescription = (data) => {
         interior.description = typesToPForm(interior.types);
     });
 };
+
+// click events for filter
+$('.filter-btn').on('click', function() {
+    $('.filter').slideToggle();
+});
+
+$(document).on('click', '.close-filter', function() {
+    $('.filter').slideUp();
+});

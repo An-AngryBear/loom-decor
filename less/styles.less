@@ -4,7 +4,6 @@
 @border-gray: #e8e6e3;
 @secondary-txt-gray: #a0a3a3;
 @caps-txt-gray: #a3b1c2;
-@btn-gray: #9da5b3;
 @header-font: 'Rufina', serif;
 @main-font: 'Maven Pro', sans-serif;
 
@@ -15,6 +14,43 @@
     padding-right: 20px;
     display: flex;
     justify-content: space-between;
+    .aside {
+        display: flex;
+        flex-direction: column;
+        .designer-info {
+            text-align: center;
+        }
+        .filter {
+            text-align: center;
+            display: none;
+            position: relative;
+            .close-filter {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: @main-txt-slate;
+                font-size: 1.2em;
+            }
+        }
+
+    }
+    .filter-btn {
+        background-color: @title-box-gray;
+        border: 0 none;
+        border-radius: 0;
+        padding: 17px 0;
+        text-transform: uppercase;
+        font-family: @main-font;
+        color: @main-txt-slate;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+.hr {
+    background-color: @border-gray;
+    border: none;
+    height: 1.5px;
 }
 
 .display-card, .img-container img {
@@ -49,10 +85,10 @@ p {
 // stack divs in column for mobile and tablet view, adjust sizes
 .wrapper {
     flex-direction: column;
-    .filter {
+    .aside {
         min-height: 30vh;
         margin-bottom: 20px;
-        .filter-header {
+        .aside-header {
             text-align: center;
             font-size: 24px;
         }
@@ -86,7 +122,7 @@ p {
         padding-left: 60px;
     }
     
-    .filter {
+    .aside {
         min-height: 30vh;
     }
     
@@ -123,9 +159,16 @@ p {
 
     .wrapper {
         flex-direction: row;
-        .filter {
+        .aside {
             min-height: 100vh;
-            flex: 1
+            flex: 1.5;
+            min-height: 80vh;
+            .filter-btn {
+                display: none;
+            }
+            .designer-info {
+                min-height: 20vh;
+            }
         }
         .img-container {
             flex: 3;

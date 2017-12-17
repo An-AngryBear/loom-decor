@@ -55,6 +55,15 @@ let addDescription = (data) => {
         interior.description = typesToPForm(interior.types);
     });
 };
+
+// click events for filter
+$('.filter-btn').on('click', function() {
+    $('.filter').slideToggle();
+});
+
+$(document).on('click', '.close-filter', function() {
+    $('.filter').slideUp();
+});
 },{"../templates/display-cards.hbs":24,"../templates/header.hbs":25,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
