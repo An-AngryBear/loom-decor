@@ -6,16 +6,19 @@ const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
 let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
+let designerTemplate = require('../templates/designer-info.hbs');
 
 // adds templates to DOM
 let loadAllRooms = () => {
+    $('.filter').empty();
     $('.img-container').empty();
+    $('.designer-info').empty();
     getDesignerInfo()
     .then( (data) => {
         addDescription(data);
+        $('.designer-info').append(designerTemplate(data.designer));
         $('.filter').append(filterTemplate(getRooms(data)));
         $('.img-container').append(displayTemplate(data));
-        $('.page-header').append(headerTemplate(data.designer));
     });
 };
 
@@ -83,8 +86,13 @@ $(document).on('click', '.close-filter', function() {
 
     //filters based on room-type
 $(document).on('click', '.room-list-item', function() {
-    let roomType = $(this).attr('data');
-    filterByRoom(roomType);
+    filterByRoom($(this).attr('data'));
+    $('.clear-btn').show();
+});
+
+$(document).on('click', '.clear-btn', function() {
+    loadAllRooms();
+    $('.clear-btn').hide();
 });
 
 // ********page initialization********
