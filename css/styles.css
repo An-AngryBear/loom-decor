@@ -74,7 +74,7 @@ p {
 .wrapper .aside .filter .clear-btn {
   position: absolute;
   top: 0;
-  right: 80px;
+  right: 40px;
   text-align: center;
   line-height: 25px;
   transform: translate(50%);
