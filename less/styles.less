@@ -7,6 +7,31 @@
 @header-font: 'Rufina', serif;
 @main-font: 'Maven Pro', sans-serif;
 
+.hr {
+    background-color: @border-gray;
+    border: none;
+    height: 1.5px;
+}
+
+h3 {
+    font-family: @header-font;
+    font-weight: 500;
+    line-height: 25px;
+    color: @main-txt-slate;
+    font-weight: 400;
+    font-size: 2.5vh;
+}
+
+p {
+    font-family: @main-font;
+    font-size: 16px;
+}
+
+.display-card, .img-container img {
+    width: 100%;
+}
+
+
 .page-header {
     margin-top: 20px;
 }
@@ -34,6 +59,22 @@
                 right: 5px;
                 color: @main-txt-slate;
                 font-size: 1.2em;
+            }
+            .filter-header {
+                text-align: left;
+                margin-left: 1em;
+            }
+            .clear-btn {
+                position: absolute;
+                top: 0;
+                right: 100px;
+                text-align: center;
+                line-height: 25px;
+                transform: translate(50%);
+                font-family: @main-font;
+                text-transform: uppercase;
+                color: @secondary-txt-gray;
+                visibility: hidden;
             }
             .room-filters {
                 .room-filter-list {
@@ -74,29 +115,6 @@
     }
 }
 
-.hr {
-    background-color: @border-gray;
-    border: none;
-    height: 1.5px;
-}
-
-.display-card, .img-container img {
-    width: 100%;
-}
-
-h3 {
-    font-family: @header-font;
-    font-weight: 500;
-    line-height: 25px;
-    color: @main-txt-slate;
-    font-weight: 400;
-    font-size: 1em;
-}
-
-p {
-    font-family: @main-font;
-    font-size: 16px;
-}
 
 
 // ************mobile styles***************
@@ -116,7 +134,6 @@ p {
         margin-bottom: 20px;
         .aside-header {
             text-align: center;
-            font-size: 24px;
         }
     }
 }

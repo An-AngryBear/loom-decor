@@ -65,6 +65,10 @@ let filterByRoom = (roomType) => {
     });
 };
 
+// let addClearBtn = () => {
+//     $('')
+// }
+
 // ********click events for filter********
 
     //toggles filter with click of filter button
