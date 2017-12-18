@@ -8,13 +8,16 @@ let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
 
 // adds templates to DOM
-getDesignerInfo()
-.then( (data) => {
-    addDescription(data);
-    $('.filter').append(filterTemplate(getRooms(data)));
-    $('.img-container').append(displayTemplate(data));
-    $('.page-header').append(headerTemplate(data.designer));
-});
+let loadAllRooms = () => {
+    $('.img-container').empty();
+    getDesignerInfo()
+    .then( (data) => {
+        addDescription(data);
+        $('.filter').append(filterTemplate(getRooms(data)));
+        $('.img-container').append(displayTemplate(data));
+        $('.page-header').append(headerTemplate(data.designer));
+    });
+};
 
 // formats the product types into paragraph form
 let typesToPForm = (names) => {
@@ -47,11 +50,38 @@ let getRooms = (data) => {
     return { roomTypes };
 };
 
-// click events for filter
+// filters through data looking for room-type. appends filtered data to DOM
+let filterByRoom = (roomType) => {
+    $('.img-container').empty();    
+    getDesignerInfo()
+    .then( (data) => {
+        data.interiors = data.interiors.filter( (room) => {
+            if(room['room-type'] === roomType) {
+                return room;
+            }
+        });
+        addDescription(data);
+        $('.img-container').append(displayTemplate(data));
+    });
+};
+
+// ********click events for filter********
+
+    //toggles filter with click of filter button
 $('.filter-btn').on('click', function() {
     $('.filter').slideToggle();
 });
 
+    //closes filter with click of 'X'
 $(document).on('click', '.close-filter', function() {
     $('.filter').slideUp();
 });
+
+    //filters based on room-type
+$(document).on('click', '.room-list-item', function() {
+    let roomType = $(this).attr('data');
+    filterByRoom(roomType);
+});
+
+// ********page initialization********
+loadAllRooms();

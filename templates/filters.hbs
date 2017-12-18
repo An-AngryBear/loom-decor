@@ -1,7 +1,7 @@
 <div class="room-filters">
     <ul class="room-filter-list">
         {{#each roomTypes}}
-            <li class="room-list-item">{{this}}</li>
+            <li class="room-list-item" role="button" data="{{this}}">{{this}}</li>
         {{/each}}
     </ul>
     <hr class="hr">

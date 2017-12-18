@@ -31,13 +31,16 @@ let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
 
 // adds templates to DOM
-getDesignerInfo()
-.then( (data) => {
-    addDescription(data);
-    $('.filter').append(filterTemplate(getRooms(data)));
-    $('.img-container').append(displayTemplate(data));
-    $('.page-header').append(headerTemplate(data.designer));
-});
+let loadAllRooms = () => {
+    $('.img-container').empty();
+    getDesignerInfo()
+    .then( (data) => {
+        addDescription(data);
+        $('.filter').append(filterTemplate(getRooms(data)));
+        $('.img-container').append(displayTemplate(data));
+        $('.page-header').append(headerTemplate(data.designer));
+    });
+};
 
 // formats the product types into paragraph form
 let typesToPForm = (names) => {
@@ -70,14 +73,41 @@ let getRooms = (data) => {
     return { roomTypes };
 };
 
-// click events for filter
+// filters through data looking for room-type. appends filtered data to DOM
+let filterByRoom = (roomType) => {
+    $('.img-container').empty();    
+    getDesignerInfo()
+    .then( (data) => {
+        data.interiors = data.interiors.filter( (room) => {
+            if(room['room-type'] === roomType) {
+                return room;
+            }
+        });
+        addDescription(data);
+        $('.img-container').append(displayTemplate(data));
+    });
+};
+
+// ********click events for filter********
+
+    //toggles filter with click of filter button
 $('.filter-btn').on('click', function() {
     $('.filter').slideToggle();
 });
 
+    //closes filter with click of 'X'
 $(document).on('click', '.close-filter', function() {
     $('.filter').slideUp();
 });
+
+    //filters based on room-type
+$(document).on('click', '.room-list-item', function() {
+    let roomType = $(this).attr('data');
+    filterByRoom(roomType);
+});
+
+// ********page initialization********
+loadAllRooms();
 },{"../templates/display-cards.hbs":24,"../templates/filters.hbs":25,"../templates/header.hbs":26,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
@@ -11475,7 +11505,7 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
     + alias4(((helper = (helper = helpers["room-type"] || (depth0 != null ? depth0["room-type"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"room-type","hash":{},"data":data}) : helper)))
     + "\">\r\n        <img src=\""
     + alias4(((helper = (helper = helpers.img || (depth0 != null ? depth0.img : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"img","hash":{},"data":data}) : helper)))
-    + "\">\r\n        <p>Loom Decor products displayed above: "
+    + "\">\r\n        <p class=\"display-desc\">"
     + alias4(((helper = (helper = helpers.description || (depth0 != null ? depth0.description : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"description","hash":{},"data":data}) : helper)))
     + "</p>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
@@ -11488,8 +11518,12 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(container,depth0,helpers,partials,data) {
-    return "            <li class=\"room-list-item\">"
-    + container.escapeExpression(container.lambda(depth0, depth0))
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "            <li class=\"room-list-item\" role=\"button\" data=\""
+    + alias2(alias1(depth0, depth0))
+    + "\">"
+    + alias2(alias1(depth0, depth0))
     + "</li>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
