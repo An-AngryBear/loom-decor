@@ -4,7 +4,6 @@ var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
-let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
 let designerTemplate = require('../templates/designer-info.hbs');
 
@@ -68,10 +67,6 @@ let filterByRoom = (roomType) => {
     });
 };
 
-// let addClearBtn = () => {
-//     $('')
-// }
-
 // ********click events for filter********
 
     //toggles filter with click of filter button
@@ -89,7 +84,7 @@ $(document).on('click', '.room-list-item', function() {
     filterByRoom($(this).attr('data'));
     $('.clear-btn').show();
 });
-
+    //hides clear button, removes filter
 $(document).on('click', '.clear-btn', function() {
     loadAllRooms();
     $('.clear-btn').hide();

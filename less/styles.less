@@ -31,16 +31,24 @@ p {
     width: 100%;
 }
 
-
 .page-header {
     margin-top: 20px;
-}
-
-.header-text {
-    font-size: 1.2em;
+    margin-bottom: 20px;
+    .title-header {
+        background-color: @title-box-gray;
+        display: block;
+        padding-bottom: 20px;
+        padding-top: 25px;
+        text-align: center;
+        font-size: 24px;
+        .header-text {
+            font-size: 1.2em;
+        }
+    }
 }
 
 .wrapper {
+    min-height: 100vh;
     max-width: 1020px;
     margin: auto;
     padding-left: 20px;
@@ -51,8 +59,14 @@ p {
         display: flex;
         flex-direction: column;
         .designer-info {
-            .designer-header {
-                text-align: left;
+            .designer-h4 {
+                text-align: center;
+                font-family: @main-font;
+                color: @main-txt-slate;
+                text-transform: uppercase;
+            }
+            .designer-quote {
+                color: @main-txt-slate;
             }
         }
         .filter {
@@ -96,7 +110,7 @@ p {
                     margin-left: 20px;
                 }
                 .room-filter-list li {
-                    text-align: left;
+                    text-align: center;
                 }
                 .room-filter-list li:hover {
                     color: @secondary-txt-gray;
@@ -129,30 +143,19 @@ p {
     }
 }
 
-
-
 // ************mobile styles***************
-.title-header {
-    background-color: @title-box-gray;
-    display: block;
-    padding-bottom: 20px;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 24px;
-}
 
-// stack divs in column for mobile and tablet view, adjust sizes
+    // stack divs in column for mobile and tablet view, adjust sizes
 .wrapper {
     flex-direction: column;
     .aside {
-        margin-bottom: 20px;
         .aside-header {
             text-align: center;
         }
     }
 }
 
-// display nav and footer static imgs for mobile - FOR TEST DEMO
+    // display nav and footer static imgs for mobile - FOR TEST DEMO
 .tablet-img {
     display: none;
 }
@@ -165,26 +168,20 @@ p {
     width: 100%;
 }
 
-
-
 //************ tablet styles*************
 @media only screen and (min-width : 600px) {
     
-    .title-header {
-        text-align: left;
+    .page-header {
+        .title-header {
+            text-align: left;
+            .header-text {
+                padding-left: 60px;
+            }
+        }
     }
-    
-    .header-text {
-        padding-left: 60px;
-    }
-    
+
     .wrapper {
         .aside {
-            .designer-info {
-                .designer-header {
-                    text-align: center;
-                }
-            }
             .filter {
                 .filter-header {
                     text-align: center;
@@ -225,17 +222,18 @@ p {
 //************* desktop styles **************
 @media only screen and (min-width : 900px) {
 
-    .title-header {
-        max-width: 1020px;
-        margin: 0 auto 0 auto;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-    
-    .header-text {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 60px;
+    .page-header {
+        .title-header {
+            max-width: 1020px;
+            margin: 0 auto 0 auto;
+            padding-bottom: 0;
+            padding-top: 0;
+            .header-text {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 60px;
+            }
+        }
     }
 
     .wrapper {
@@ -244,7 +242,9 @@ p {
             min-height: 100vh;
             flex: 1.5;
             .designer-info {
-                min-height: 20vh;
+                .designer-quote {
+                    margin: 20px;
+                }
             }
             .filter {
                 display: block;
@@ -253,14 +253,15 @@ p {
                 }
                 .filter-header {
                     text-align: left;
+                    margin-left: 20px;
                 }
                 .clear-btn {
                     right: 40px;
                 }
-            }
-            .designer-info {
-                .designer-header {
-                    text-align: left;
+                .room-filters {
+                    .room-filter-list li {
+                        text-align: left;
+                    }
                 }
             }
         }
@@ -276,8 +277,6 @@ p {
                 }
             }
         }
-
-
     }
 
     // display nav and footer static imgs for desktop - FOR TEST DEMO

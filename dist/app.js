@@ -27,7 +27,6 @@ var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
-let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
 let designerTemplate = require('../templates/designer-info.hbs');
 
@@ -91,10 +90,6 @@ let filterByRoom = (roomType) => {
     });
 };
 
-// let addClearBtn = () => {
-//     $('')
-// }
-
 // ********click events for filter********
 
     //toggles filter with click of filter button
@@ -112,7 +107,7 @@ $(document).on('click', '.room-list-item', function() {
     filterByRoom($(this).attr('data'));
     $('.clear-btn').show();
 });
-
+    //hides clear button, removes filter
 $(document).on('click', '.clear-btn', function() {
     loadAllRooms();
     $('.clear-btn').hide();
@@ -120,7 +115,7 @@ $(document).on('click', '.clear-btn', function() {
 
 // ********page initialization********
 loadAllRooms();
-},{"../templates/designer-info.hbs":24,"../templates/display-cards.hbs":25,"../templates/filters.hbs":26,"../templates/header.hbs":27,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
+},{"../templates/designer-info.hbs":24,"../templates/display-cards.hbs":25,"../templates/filters.hbs":26,"./designer-info.js":1,"hbsfy/runtime":22,"jquery":23}],3:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -11513,23 +11508,23 @@ var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"1":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "    "
+  return "\r\n    "
     + container.escapeExpression(((helper = (helper = helpers.quote || (depth0 != null ? depth0.quote : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"quote","hash":{},"data":data}) : helper)))
     + "\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<h3 class=\"designer-header\">Designer Info</h3>\r\n<hr class=\"hr\">\r\n<h4>"
+  return "<h4 class=\"designer-h4\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + "("
     + alias4(((helper = (helper = helpers.social || (depth0 != null ? depth0.social : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"social","hash":{},"data":data}) : helper)))
     + ") of "
     + alias4(((helper = (helper = helpers["design-firm"] || (depth0 != null ? depth0["design-firm"] : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"design-firm","hash":{},"data":data}) : helper)))
-    + " from "
+    + " - "
     + alias4(((helper = (helper = helpers.location || (depth0 != null ? depth0.location : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"location","hash":{},"data":data}) : helper)))
-    + "</h4>\r\n<p class=\"designer-quote\">\"\r\n"
+    + "</h4>\r\n<p class=\"designer-quote\">\r\n\""
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.quotes : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\"</p>\r\n";
+    + "\"\r\n</p>\r\n<hr class=\"hr\">\r\n";
 },"useData":true});
 
 },{"hbsfy/runtime":22}],25:[function(require,module,exports){
@@ -11568,13 +11563,6 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
   return "<h3 class=\"filter-header\">Filter By Room</h3>\r\n<h3 class=\"clear-btn\">Clear</h3>\r\n<span role=\"button\" class=\"close-filter\">&#x2715;</span>\r\n<hr class=\"hr\">\r\n<div class=\"room-filters\">\r\n    <ul class=\"room-filter-list\">\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.roomTypes : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </ul>\r\n    <hr class=\"hr\">\r\n</div>";
-},"useData":true});
-
-},{"hbsfy/runtime":22}],27:[function(require,module,exports){
-// hbsfy compiled Handlebars template
-var HandlebarsCompiler = require('hbsfy/runtime');
-module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "";
 },"useData":true});
 
 },{"hbsfy/runtime":22}]},{},[2]);
