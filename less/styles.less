@@ -34,6 +34,7 @@ p {
 
 .page-header {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .header-text {
@@ -41,6 +42,7 @@ p {
 }
 
 .wrapper {
+    min-height: 100vh;
     max-width: 1020px;
     margin: auto;
     padding-left: 20px;
@@ -51,8 +53,14 @@ p {
         display: flex;
         flex-direction: column;
         .designer-info {
-            .designer-header {
-                text-align: left;
+            .designer-h4 {
+                text-align: center;
+                font-family: @main-font;
+                color: @main-txt-slate;
+                text-transform: uppercase;
+            }
+            .designer-quote {
+                color: @main-txt-slate;
             }
         }
         .filter {
@@ -96,7 +104,7 @@ p {
                     margin-left: 20px;
                 }
                 .room-filter-list li {
-                    text-align: left;
+                    text-align: center;
                 }
                 .room-filter-list li:hover {
                     color: @secondary-txt-gray;
@@ -145,7 +153,6 @@ p {
 .wrapper {
     flex-direction: column;
     .aside {
-        margin-bottom: 20px;
         .aside-header {
             text-align: center;
         }
@@ -180,11 +187,6 @@ p {
     
     .wrapper {
         .aside {
-            .designer-info {
-                .designer-header {
-                    text-align: center;
-                }
-            }
             .filter {
                 .filter-header {
                     text-align: center;
@@ -244,7 +246,9 @@ p {
             min-height: 100vh;
             flex: 1.5;
             .designer-info {
-                min-height: 20vh;
+                .designer-quote {
+                    margin: 20px;
+                }
             }
             .filter {
                 display: block;
@@ -253,14 +257,15 @@ p {
                 }
                 .filter-header {
                     text-align: left;
+                    margin-left: 20px;
                 }
                 .clear-btn {
                     right: 40px;
                 }
-            }
-            .designer-info {
-                .designer-header {
-                    text-align: left;
+                .room-filters {
+                    .room-filter-list li {
+                        text-align: left;
+                    }
                 }
             }
         }

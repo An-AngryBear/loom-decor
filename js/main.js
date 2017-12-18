@@ -4,7 +4,6 @@ var $ = require('jquery');
 let Handlebars = require('hbsfy/runtime');
 const { getDesignerInfo } = require("./designer-info.js");
 let displayTemplate = require('../templates/display-cards.hbs');
-let headerTemplate = require('../templates/header.hbs');
 let filterTemplate = require('../templates/filters.hbs');
 let designerTemplate = require('../templates/designer-info.hbs');
 
