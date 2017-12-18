@@ -4,21 +4,155 @@
 @border-gray: #e8e6e3;
 @secondary-txt-gray: #a0a3a3;
 @caps-txt-gray: #a3b1c2;
-@btn-gray: #9da5b3;
+@header-font: 'Rufina', serif;
+@main-font: 'Maven Pro', sans-serif;
 
-.wrapper {
-    display: flex;
-    max-width: 1120px;
-    margin: auto;
+.hr {
+    background-color: @border-gray;
+    border: none;
+    height: 1.5px;
+}
+
+h3 {
+    font-family: @header-font;
+    font-weight: 500;
+    line-height: 25px;
+    color: @main-txt-slate;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+p {
+    font-family: @main-font;
+    font-size: 16px;
 }
 
 .display-card, .img-container img {
     width: 100%;
 }
 
-// mobile styles
 
-// display nav and footer static imgs for mobile
+.page-header {
+    margin-top: 20px;
+}
+
+.header-text {
+    font-size: 1.2em;
+}
+
+.wrapper {
+    max-width: 1020px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    .aside {
+        display: flex;
+        flex-direction: column;
+        .designer-info {
+            .designer-header {
+                text-align: left;
+            }
+        }
+        .filter {
+            text-align: center;
+            display: none;
+            position: relative;
+            .close-filter {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                color: @main-txt-slate;
+                font-size: 1.2em;
+            }
+            .filter-header {
+                text-align: left;
+            }
+            .clear-btn {
+                position: absolute;
+                top: 0;
+                right: 80px;
+                text-align: center;
+                line-height: 25px;
+                transform: translate(50%);
+                font-family: @main-font;
+                text-transform: uppercase;
+                color: @secondary-txt-gray;
+                display: none;
+            }
+            .clear-btn:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+            .room-filters {
+                .room-filter-list {
+                    list-style-type: none;
+                    padding: 0;
+                    font-family: @main-font;
+                    color: @main-txt-slate;
+                    font-weight: 200;
+                    line-height: 1.5;
+                    margin-left: 20px;
+                }
+                .room-filter-list li {
+                    text-align: left;
+                }
+                .room-filter-list li:hover {
+                    color: @secondary-txt-gray;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .img-container {
+        .display-card {
+            margin-bottom: 40px;
+            .display-desc {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: .8em;
+                color: @main-txt-slate;
+            }
+        }
+    }
+    .filter-btn {
+        background-color: @title-box-gray;
+        border: 0 none;
+        border-radius: 0;
+        padding: 17px 0;
+        text-transform: uppercase;
+        font-family: @main-font;
+        color: @main-txt-slate;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+// ************mobile styles***************
+.title-header {
+    background-color: @title-box-gray;
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    text-align: center;
+    font-size: 24px;
+}
+
+// stack divs in column for mobile and tablet view, adjust sizes
+.wrapper {
+    flex-direction: column;
+    .aside {
+        margin-bottom: 20px;
+        .aside-header {
+            text-align: center;
+        }
+    }
+}
+
+// display nav and footer static imgs for mobile - FOR TEST DEMO
 .tablet-img {
     display: none;
 }
@@ -31,28 +165,122 @@
     width: 100%;
 }
 
-// tablet styles
-@media only screen and (min-width : 600px) {
 
-    // display nav and footer static imgs for tablet
+
+//************ tablet styles*************
+@media only screen and (min-width : 600px) {
+    
+    .title-header {
+        text-align: left;
+    }
+    
+    .header-text {
+        padding-left: 60px;
+    }
+    
+    .wrapper {
+        .aside {
+            .designer-info {
+                .designer-header {
+                    text-align: center;
+                }
+            }
+            .filter {
+                .filter-header {
+                    text-align: center;
+                }
+                .room-filters {
+                    .room-filter-list li {
+                        text-align: center;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+            .img-container {
+                .display-card {
+                    .display-desc {
+                        font-size: 1em
+                    }
+                }
+            }
+        }
+    }
+
+    // display nav and footer static imgs for tablet - FOR TEST DEMO
     .mobile-img {
         display: none;
     }
-
+    
     .desktop-img {
         display: none;
     }
-
+    
     .tablet-img {
         display: block;
         width: 100%;
     }
+    
 }
 
-// desktop styles
+//************* desktop styles **************
 @media only screen and (min-width : 900px) {
 
-    // display nav and footer static imgs for desktop
+    .title-header {
+        max-width: 1020px;
+        margin: 0 auto 0 auto;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    
+    .header-text {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 60px;
+    }
+
+    .wrapper {
+        flex-direction: row;
+        .aside {
+            min-height: 100vh;
+            flex: 1.5;
+            .designer-info {
+                min-height: 20vh;
+            }
+            .filter {
+                display: block;
+                .close-filter {
+                    display: none;
+                }
+                .filter-header {
+                    text-align: left;
+                }
+                .clear-btn {
+                    right: 40px;
+                }
+            }
+            .designer-info {
+                .designer-header {
+                    text-align: left;
+                }
+            }
+        }
+        .filter-btn {
+            display: none;
+        }
+        .img-container {
+            flex: 3;
+            margin-left: 20px;
+            .display-card {
+                .display-desc {
+                    font-size: .8em
+                }
+            }
+        }
+
+
+    }
+
+    // display nav and footer static imgs for desktop - FOR TEST DEMO
     .tablet-img {
         display: none;
     }
