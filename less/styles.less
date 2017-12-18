@@ -31,14 +31,20 @@ p {
     width: 100%;
 }
 
-
 .page-header {
     margin-top: 20px;
     margin-bottom: 20px;
-}
-
-.header-text {
-    font-size: 1.2em;
+    .title-header {
+        background-color: @title-box-gray;
+        display: block;
+        padding-bottom: 20px;
+        padding-top: 25px;
+        text-align: center;
+        font-size: 24px;
+        .header-text {
+            font-size: 1.2em;
+        }
+    }
 }
 
 .wrapper {
@@ -137,19 +143,9 @@ p {
     }
 }
 
-
-
 // ************mobile styles***************
-.title-header {
-    background-color: @title-box-gray;
-    display: block;
-    padding-bottom: 20px;
-    padding-top: 25px;
-    text-align: center;
-    font-size: 24px;
-}
 
-// stack divs in column for mobile and tablet view, adjust sizes
+    // stack divs in column for mobile and tablet view, adjust sizes
 .wrapper {
     flex-direction: column;
     .aside {
@@ -159,7 +155,7 @@ p {
     }
 }
 
-// display nav and footer static imgs for mobile - FOR TEST DEMO
+    // display nav and footer static imgs for mobile - FOR TEST DEMO
 .tablet-img {
     display: none;
 }
@@ -172,19 +168,18 @@ p {
     width: 100%;
 }
 
-
-
 //************ tablet styles*************
 @media only screen and (min-width : 600px) {
     
-    .title-header {
-        text-align: left;
+    .page-header {
+        .title-header {
+            text-align: left;
+            .header-text {
+                padding-left: 60px;
+            }
+        }
     }
-    
-    .header-text {
-        padding-left: 60px;
-    }
-    
+
     .wrapper {
         .aside {
             .filter {
@@ -227,17 +222,18 @@ p {
 //************* desktop styles **************
 @media only screen and (min-width : 900px) {
 
-    .title-header {
-        max-width: 1020px;
-        margin: 0 auto 0 auto;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-    
-    .header-text {
-        margin-top: 0;
-        margin-bottom: 0;
-        padding: 60px;
+    .page-header {
+        .title-header {
+            max-width: 1020px;
+            margin: 0 auto 0 auto;
+            padding-bottom: 0;
+            padding-top: 0;
+            .header-text {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding: 60px;
+            }
+        }
     }
 
     .wrapper {
@@ -281,8 +277,6 @@ p {
                 }
             }
         }
-
-
     }
 
     // display nav and footer static imgs for desktop - FOR TEST DEMO

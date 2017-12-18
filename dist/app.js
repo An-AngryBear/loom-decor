@@ -90,10 +90,6 @@ let filterByRoom = (roomType) => {
     });
 };
 
-// let addClearBtn = () => {
-//     $('')
-// }
-
 // ********click events for filter********
 
     //toggles filter with click of filter button
@@ -111,7 +107,7 @@ $(document).on('click', '.room-list-item', function() {
     filterByRoom($(this).attr('data'));
     $('.clear-btn').show();
 });
-
+    //hides clear button, removes filter
 $(document).on('click', '.clear-btn', function() {
     loadAllRooms();
     $('.clear-btn').hide();
